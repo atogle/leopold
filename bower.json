@@ -1,0 +1,9 @@
+{
+  "name": "leopold",
+  "version": "0.0.0",
+  "dependencies": {
+    "modernizr": "~2.6.2",
+    "bootstrap": "~2.3.2",
+    "handlebars.js": "~1.0.12"
+  }
+}
