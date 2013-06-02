@@ -23,7 +23,7 @@ Leopold.Config = [
       prompt: 'Where can I park my car?',
       layers: [
 	  {
-	      url: 'http://gis.phila.gov/ArcGIS/rest/services/PhilaGov/Business/MapServer/8',
+	      url: 'http://gis.phila.gov/ArcGIS/rest/services/PhilaGov/Business/MapServer/8/query',
 	      template: '<div class="span6">{{NAME}} (car park)</div>',
 	      buffer: 2.0, //in miles
 	      agsOptions: { where: 'TYPE = 3371' } //do I need spatialRel=esriSpatialRelContains??
