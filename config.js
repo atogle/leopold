@@ -6,13 +6,13 @@ Leopold.Config = [
     layers: [
       {
         url: 'http://gis.phila.gov/ArcGIS/rest/services/PhilaGov/Farmers_Markets/MapServer/0/query',
-        template: '<div class="span6">{{NAME}} (farmers market)</div>',
+        template: '<div class="span6 well"><h4>{{NAME}}</h4> <small>{{ADDRESS}}</small></div>',
         buffer: 1.0, //in miles
         agsOptions: {} //just use defaults
       },
       {
         url: 'http://gis.phila.gov/ArcGIS/rest/services/PhilaGov/Healthy_Corner_Stores/MapServer/0/query',
-        template: '<div class="span6">{{OFFICIAL_S}} (healthy store)</div>',
+        template: '<div class="span6 well"><h4>{{OFFICIAL_S}}</h4> <small>{{STORE_ADDR}}</small></div>',
         buffer: 1.0, //in miles
         agsOptions: {} //just use defaults
       }
@@ -20,11 +20,11 @@ Leopold.Config = [
     ]
   },
   {
-      prompt: 'Where can I park my car? around here',
+      prompt: 'Where can I park my car around here?',
       layers: [
 	  {
 	      url: 'http://gis.phila.gov/ArcGIS/rest/services/PhilaGov/Business/MapServer/8/query',
-	      template: '<div class="span6">{{CONTACT_LAST_NAME}} (car park) {{LICENSE_ADDRESS}} </div>',
+	      template: '<div class="span6 well"><h4>{{CONTACT_LAST_NAME}}</h4> <small>{{LICENSE_ADDRESS}}</small> </div>',
 	      buffer: 1.0, //in miles
 	      agsOptions: { where: 'TYPE = 3371' } //do I need spatialRel=esriSpatialRelContains??
 	  }
@@ -35,19 +35,19 @@ Leopold.Config = [
     layers: [
       {
         url: 'http://gis.phila.gov/ArcGIS/rest/services/PhilaGov/Playgrounds/MapServer/0/query',
-        template: '<div class="span6">{{SITE}} (playground) {{ADDRESS}}</div>',
+        template: '<div class="span6 well"><h4>{{SITE}}</h4> <small>{{ADDRESS}}</small></div>',
         buffer: .5, //in miles
         agsOptions: {} //just use defaults
       },
       {
         url: 'http://gis.phila.gov/ArcGIS/rest/services/PhilaGov/Parks/MapServer/0/query',
-        template: '<div class="span6">{{NAME}} (parks) {{ADDRESS}}</div>',
+        template: '<div class="span6 well"><h4>{{NAME}}</h4> <small>{{ADDRESS}}</small></div>',
         buffer: .5, //in miles
         agsOptions: {} //just use defaults
       },
       {
         url: 'http://gis.phila.gov/ArcGIS/rest/services/PhilaGov/Recreation_Facilities/MapServer/0/query',
-        template: '<div class="span6">{{NAME}} (recreation center)</div>',
+        template: '<div class="span6 well"><h4>{{NAME}}</h4> <small>{{ADDRESS}}</small></div>',
         buffer: 1.0, //in miles
         agsOptions: {} //just use defaults
       }
@@ -58,19 +58,19 @@ Leopold.Config = [
     layers: [
       {
         url: 'http://gis.phila.gov/ArcGIS/rest/services/PhilaGov/PAL_Centers/MapServer/0/query',
-        template: '<div class="span6">{{CENTER_NAM}} (PAL Center) {{ADDRESS}}</div>',
+        template: '<div class="span6 well">{{CENTER_NAM}} (PAL Center) {{ADDRESS}}</div>',
         buffer: 2.0, //in miles
         agsOptions: {} //just use defaults
       },
       {
         url: 'http://gis.phila.gov/ArcGIS/rest/services/PhilaGov/Ice_Rinks/MapServer/0/query',
-        template: '<div class="span6">{{ICE_RINK}} (ice rink) {{ADDRESS}} {{WEBSITE}}</div>',
+        template: '<div class="span6 well">{{ICE_RINK}} (ice rink) {{ADDRESS}} {{WEBSITE}}</div>',
         buffer: 1.0, //in miles
         agsOptions: {} //just use defaults
       },
       {
         url: 'http://gis.phila.gov/ArcGIS/rest/services/PhilaGov/Recreation_Facilities/MapServer/0/query',
-        template: '<div class="span6">{{NAME}} (recreation center) {{ADDRESS}}</div>',
+        template: '<div class="span6 well">{{NAME}} (recreation center) {{ADDRESS}}</div>',
         buffer: 1.0, //in miles
         agsOptions: {} //just use defaults
       },
@@ -82,13 +82,13 @@ Leopold.Config = [
     layers: [
       {
         url: 'http://gis.phila.gov/ArcGIS/rest/services/PhilaGov/Hospitals/MapServer/0/query',
-        template: '<div class="span6">{{NAME}} (hospital) {{ADDRESS}} {{PHONE}}</div>',
+        template: '<div class="span6 well">{{NAME}} (hospital) {{ADDRESS}} {{PHONE}}</div>',
         buffer: 1.0, //in miles
         agsOptions: {} //just use defaults
       },
       {
         url: 'http://gis.phila.gov/ArcGIS/rest/services/PhilaGov/Fire_Stations/MapServer/0/query',
-        template: '<div class="span6">{{FIRESTA_}} (fire station) {{LOCATION}}</div>',
+        template: '<div class="span6 well">{{FIRESTA_}} (fire station) {{LOCATION}}</div>',
         buffer: 1.0, //in miles
         agsOptions: {} //just use defaults
       }
@@ -99,7 +99,7 @@ Leopold.Config = [
     layers: [
       {
         url: 'http://gis.phila.gov/ArcGIS/rest/services/PhilaGov/RentalLicense/MapServer/1/query',
-        template: '<div class="span6">{{LICENSE_ADDRESS}} (apartment)</div>',
+        template: '<div class="span6 well">{{LICENSE_ADDRESS}} (apartment)</div>',
         buffer: .25, //in miles
         agsOptions: {} //just use defaults
       }
@@ -110,7 +110,7 @@ Leopold.Config = [
     layers: [
       {
         url: 'http://gis.phila.gov/ArcGIS/rest/services/PhilaGov/Green_Storm_Water_Projects/MapServer/0/query',
-        template: '<div class="span6">{{NAME}} (project) {{Primary_Feature}}</div>',
+        template: '<div class="span6 well">{{NAME}} (project) {{Primary_Feature}}</div>',
         buffer: 2.0, //in miles
         agsOptions: {} //just use defaults
       }
@@ -121,7 +121,7 @@ Leopold.Config = [
 	layers: [
 	    {
 		url: 'http://gis.phila.gov/ArcGIS/rest/services/PhilaGov/ServiceAreas/MapServer/13',
-		template: '<div class="span6">Trash is picked up on the {{COLLDAY}} of the week at this location.</div>',
+		template: '<div class="span6 well">Trash is picked up on the {{COLLDAY}} of the week at this location.</div>',
 		buffer: 0, //in miles - this is so the bounding box will effectively be a point. hack? yes.
 		agsOptions: { spatialRel: 'esriSpatialRelEnvelopeIntersects' } //changing the spatial relation to Envelope Intersects
 	    }
@@ -132,7 +132,7 @@ Leopold.Config = [
     layers: [
       {
         url: 'http://gis.phila.gov/ArcGIS/rest/services/PhilaGov/Business/MapServer/8/query',
-        template: '<div class="span6">{{CONTACT_COMPANY_NAME}} {{CONTACT_LAST_NAME}} (bar/club) {{LICENSE_ADDRESS}} {{LINK_1}}{{LINK_2}}</div>',
+        template: '<div class="span6 well">{{CONTACT_COMPANY_NAME}} {{CONTACT_LAST_NAME}} (bar/club) {{LICENSE_ADDRESS}} {{LINK_1}}{{LINK_2}}</div>',
         buffer: 1.0, //in miles
         agsOptions: { where: 'TYPE = 3006' } //only special assembly business licenses
       }
@@ -143,7 +143,7 @@ Leopold.Config = [
     layers: [
       {
         url: 'http://gis.phila.gov/ArcGIS/rest/services/PhilaGov/Business/MapServer/8/query',
-        template: '<div class="span6">{{CONTACT_COMPANY_NAME}} {{CONTACT_LAST_NAME}} (daycare) {{LICENSE_ADDRESS}}</div>',
+        template: '<div class="span6 well">{{CONTACT_COMPANY_NAME}} {{CONTACT_LAST_NAME}} (daycare) {{LICENSE_ADDRESS}}</div>',
         buffer: 1.0, //in miles
         agsOptions: { where: 'TYPE = 3397' } //only daycare business licenses
       }
@@ -154,7 +154,7 @@ Leopold.Config = [
     layers: [
       {
         url: 'http://gis.phila.gov/ArcGIS/rest/services/PhilaGov/Business/MapServer/8/query',
-        template: '<div class="span6">{{CONTACT_COMPANY_NAME}} {{CONTACT_LAST_NAME}} (auto repair) {{LICENSE_ADDRESS}}</div>',
+        template: '<div class="span6 well">{{CONTACT_COMPANY_NAME}} {{CONTACT_LAST_NAME}} (auto repair) {{LICENSE_ADDRESS}}</div>',
         buffer: 1.0, //in miles
         agsOptions: { where: 'TYPE = 3311' } //only auto repair licenses
       }
@@ -165,7 +165,7 @@ Leopold.Config = [
     layers: [
       {
         url: 'http://gis.phila.gov/ArcGIS/rest/services/PhilaGov/Business/MapServer/7',
-        template: '<div class="span6">{{CONTACT_COMPANY_NAME}} {{CONTACT_LAST_NAME}} (sidewalk cafe) {{LICENSE_ADDRESS}}</div>',
+        template: '<div class="span6 well">{{CONTACT_COMPANY_NAME}} {{CONTACT_LAST_NAME}} (sidewalk cafe) {{LICENSE_ADDRESS}}</div>',
         buffer: 1.0, //in miles
         agsOptions: { where: 'TYPE = 3123' } //only sidewalk licenses
       }
@@ -176,7 +176,7 @@ Leopold.Config = [
     layers: [
       {
         url: 'http://gis.phila.gov/ArcGIS/rest/services/PhilaGov/Business/MapServer/7/query',
-        template: '<div class="span6">{{CONTACT_COMPANY_NAME}} {{CONTACT_LAST_NAME}} (food / takeout) {{LICENSE_ADDRESS}}</div>',
+        template: '<div class="span6 well">{{CONTACT_COMPANY_NAME}} {{CONTACT_LAST_NAME}} (food / takeout) {{LICENSE_ADDRESS}}</div>',
         buffer: 1.0, //in miles
         agsOptions: { where: 'TYPE = 3120 OR TYPE = 3121' } //only restaurant licenses
       }
@@ -185,40 +185,40 @@ Leopold.Config = [
   {
     prompt: 'What council district, ward division and census district am I in?*',
     layers: [
-     
+
       {
         url: 'http://gis.phila.gov/ArcGIS/rest/services/PhilaGov/ServiceAreas/MapServer/2/query',
-        template: '<div class="span6">My Current Council District is: {{DIST_NUM}}.</div>',
+        template: '<div class="span6 well">My Current Council District is: {{DIST_NUM}}.</div>',
         buffer: 0, //in miles - this is so the bounding box will effectively be a point. hack? yes.
 	agsOptions: { spatialRel: 'esriSpatialRelEnvelopeIntersects' } //changing the spatial relation to Envelope Intersects
       },
       {
         url: 'http://gis.phila.gov/ArcGIS/rest/services/PhilaGov/ServiceAreas/MapServer/3/query',
-        template: '<div class="span6">My 2016 Council District is: {{DISTRICT}}.</div>',
+        template: '<div class="span6 well">My 2016 Council District is: {{DISTRICT}}.</div>',
         buffer: 0, //in miles - this is so the bounding box will effectively be a point. hack? yes.
 	agsOptions: { spatialRel: 'esriSpatialRelEnvelopeIntersects' } //changing the spatial relation to Envelope Intersects
       },
       {
         url: 'http://gis.phila.gov/ArcGIS/rest/services/PhilaGov/ServiceAreas/MapServer/23/query',
-        template: '<div class="span6">My Ward Divison is: {{NAME2_}}.</div>',
+        template: '<div class="span6 well">My Ward Divison is: {{NAME2_}}.</div>',
 	buffer: 0, //in miles - this is so the bounding box will effectively be a point. hack? yes.
 	agsOptions: { spatialRel: 'esriSpatialRelEnvelopeIntersects' } //changing the spatial relation to Envelope Intersects
       },
       {
         url: 'http://gis.phila.gov/ArcGIS/rest/services/PhilaGov/ServiceAreas/MapServer/0/query',
-        template: '<div class="span6">My Census Tract is: {{NAME10}}.</div>',
+        template: '<div class="span6 well">My Census Tract is: {{NAME10}}.</div>',
 	buffer: 0, //in miles - this is so the bounding box will effectively be a point. hack? yes.
 	agsOptions: { spatialRel: 'esriSpatialRelEnvelopeIntersects' } //changing the spatial relation to Envelope Intersects
       },
       {
         url: 'http://gis.phila.gov/ArcGIS/rest/services/PhilaGov/ServiceAreas/MapServer/1/query',
-        template: '<div class="span6">My Block Group is: {{NAMELSAD10}}.</div>',
+        template: '<div class="span6 well">My Block Group is: {{NAMELSAD10}}.</div>',
 	buffer: 0, //in miles - this is so the bounding box will effectively be a point. hack? yes.
 	agsOptions: { spatialRel: 'esriSpatialRelEnvelopeIntersects' } //changing the spatial relation to Envelope Intersects
       },
        {
         url: 'http://gis.phila.gov/ArcGIS/rest/services/PhilaGov/Green_Storm_Water_Projects/MapServer/2/query',
-        template: '<div class="span6">My Watershed is: {{Watershed_Name}}.</div>',
+        template: '<div class="span6 well">My Watershed is: {{Watershed_Name}}.</div>',
 	buffer: 0, //in miles - this is so the bounding box will effectively be a point. hack? yes.
 	agsOptions: { spatialRel: 'esriSpatialRelEnvelopeIntersects' } //changing the spatial relation to Envelope Intersects
       },
@@ -227,22 +227,22 @@ Leopold.Config = [
    {
     prompt: 'What school district am I in?*',
     layers: [
-     
+
       {
         url: 'http://gis.phila.gov/ArcGIS/rest/services/PhilaGov/ServiceAreas/MapServer/17/query',
-        template: '<div class="span6">I am in elementary school district: {{es_name}}.</div>',
+        template: '<div class="span6 well">I am in elementary school district: {{es_name}}.</div>',
         buffer: 0, //in miles - this is so the bounding box will effectively be a point. hack? yes.
 	agsOptions: { spatialRel: 'esriSpatialRelEnvelopeIntersects' } //changing the spatial relation to Envelope Intersects
       },
       {
         url: 'http://gis.phila.gov/ArcGIS/rest/services/PhilaGov/ServiceAreas/MapServer/18/query',
-        template: '<div class="span6">I am in middle school district: {{Name}}.</div>',
+        template: '<div class="span6 well">I am in middle school district: {{Name}}.</div>',
         buffer: 0, //in miles - this is so the bounding box will effectively be a point. hack? yes.
 	agsOptions: { spatialRel: 'esriSpatialRelEnvelopeIntersects' } //changing the spatial relation to Envelope Intersects
       },
       {
         url: 'http://gis.phila.gov/ArcGIS/rest/services/PhilaGov/ServiceAreas/MapServer/19/query',
-        template: '<div class="span6">I am in high school district: {{Name}}.</div>',
+        template: '<div class="span6 well">I am in high school district: {{Name}}.</div>',
 	buffer: 0, //in miles - this is so the bounding box will effectively be a point. hack? yes.
 	agsOptions: { spatialRel: 'esriSpatialRelEnvelopeIntersects' } //changing the spatial relation to Envelope Intersects
       }
@@ -251,10 +251,10 @@ Leopold.Config = [
   {
     prompt: 'Where can I volunteer locally?*',
     layers: [
-     
+
       {
         url: 'http://gis.phila.gov/ArcGIS/rest/services/PhilaGov/RCO/MapServer/0/query',
-        template: '<div class="span6">Organization: {{ORG_NAME}} Contact: {{CONTACT}} {{ADDRESS}} {{EMAIL}} Contact by: {{CONTACT_MODE}}</div>',
+        template: '<div class="span6 well">Organization: {{ORG_NAME}} Contact: {{CONTACT}} {{ADDRESS}} {{EMAIL}} Contact by: {{CONTACT_MODE}}</div>',
         buffer: 0, //in miles - this is so the bounding box will effectively be a point. hack? yes.
 	agsOptions: { spatialRel: 'esriSpatialRelEnvelopeIntersects' } //changing the spatial relation to Envelope Intersects
       }
@@ -263,10 +263,10 @@ Leopold.Config = [
     {
     prompt: 'Where can I volunteer for a cause?*',
     layers: [
-     
+
       {
         url: 'http://gis.phila.gov/ArcGIS/rest/services/PhilaGov/RCO/MapServer/1/query',
-        template: '<div class="span6">Organization: {{ORG_NAME}} Contact: {{CONTACT}} {{ADDRESS}} {{EMAIL}} Contact by: {{CONTACT_MODE}}</div>',
+        template: '<div class="span6 well">Organization: {{ORG_NAME}} Contact: {{CONTACT}} {{ADDRESS}} {{EMAIL}} Contact by: {{CONTACT_MODE}}</div>',
         buffer: 0, //in miles - this is so the bounding box will effectively be a point. hack? yes.
 	agsOptions: { spatialRel: 'esriSpatialRelEnvelopeIntersects' } //changing the spatial relation to Envelope Intersects
       }

@@ -100,6 +100,7 @@ var Leopold = Leopold || {};
       evt.preventDefault();
       $promptContainer.show();
       $placeContainer.hide();
+      window.scrollTo(0);
     });
 
     // Bind click event to the prompts
