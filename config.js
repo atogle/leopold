@@ -115,5 +115,16 @@ Leopold.Config = [
         agsOptions: {} //just use defaults
       }
     ]
-  }
+  },
+    {
+	prompt: 'What is the trash pickup day at this location?',
+	layers: [
+	    {
+		url: 'http://gis.phila.gov/ArcGIS/rest/services/PhilaGov/ServiceAreas/MapServer/13',
+		template: '<div class="span6">Trash is picked up on the {{COLLDAY}} of the week at this location.</div>',
+		buffer: 0, //in miles - this is so the bounding box will effectively be a point. hack? yes.
+		agsOptions: { spatialRel: 'esriSpatialRelEnvelopeIntersects' } //changing the spatial relation to Envelope Intersects
+	    }
+	]
+    }
 ];
