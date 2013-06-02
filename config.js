@@ -24,8 +24,8 @@ Leopold.Config = [
       layers: [
 	  {
 	      url: 'http://gis.phila.gov/ArcGIS/rest/services/PhilaGov/Business/MapServer/8/query',
-	      template: '<div class="span6">{{NAME}} (car park)</div>',
-	      buffer: 2.0, //in miles
+	      template: '<div class="span6">{{CONTACT_LAST_NAME}} (car park)</div>',
+	      buffer: 1.0, //in miles
 	      agsOptions: { where: 'TYPE = 3371' } //do I need spatialRel=esriSpatialRelContains??
 	  }
       ]
