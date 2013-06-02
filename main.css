@@ -1,3 +1,9 @@
 #place-container {
   display: none;
 }
+
+@media (min-width: 767px) {
+  #prompt-row > .span3 {
+    min-height: 80px;
+  }
+}
