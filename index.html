@@ -10,14 +10,11 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
 
-    <!-- build:css styles/bootstrap.css -->
     <link rel="stylesheet" href="components/bootstrap/docs/assets/css/bootstrap.css">
     <link rel="stylesheet" href="components/bootstrap/docs/assets/css/bootstrap-responsive.css">
-    <!-- endbuild -->
+    <link rel="stylesheet" href="main.css">
 
-    <!-- build:js scripts/vendor/modernizr.js -->
     <script src="components/modernizr/modernizr.js"></script>
-    <!-- endbuild -->
   </head>
   <body>
     <div class="navbar">
@@ -34,15 +31,18 @@
     </div>
 
     <script id="prompt-tpl" type="text/x-handlebars-template">
-      <div class="span3">
+      <div class="span3 well">
         <a href="{{id}}" class="prompt">{{prompt}}</a>
       </div>
     </script>
 
-    <div id="prompt-container" class="container-fluid">
+    <div id="prompt-container" class="container">
+      <div id="prompt-row" class="row"></div>
     </div>
 
-    <div id="place-list" class="container-fluid">
+    <div id="place-container" class="container">
+      <div id="place-row" class="row"></div>
+      <button id="back-to-prompts-btn" class="btn btn-large btn-block btn-primary" type="button">Back to List</button>
     </div>
 
 

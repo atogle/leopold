@@ -6,7 +6,7 @@ Leopold.Config = [
     layers: [
       {
         url: 'http://gis.phila.gov/ArcGIS/rest/services/PhilaGov/Farmers_Markets/MapServer/0/query',
-        template: '<p>{{NAME}}</p>',
+        template: '<div class="span6">{{NAME}}</div>',
         buffer: 1.0, //in miles
         agsOptions: {} //just use defaults
       }
