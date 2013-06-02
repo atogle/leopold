@@ -7,13 +7,8 @@ Leopold.Config = [
       {
         url: 'http://gis.phila.gov/ArcGIS/rest/services/PhilaGov/Farmers_Markets/MapServer/0/query',
         template: '<p>{{NAME}}</p>',
-        agsOptions: {
-          where: '1=1',
-          outFields: '*',
-          inSR: 4326,
-          outSR: 4326,
-          f: 'json'
-        }
+        buffer: 1.0, //in miles
+        agsOptions: {} //just use defaults
       }
     ]
   }

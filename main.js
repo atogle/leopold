@@ -6,17 +6,39 @@ var Leopold = Leopold || {};
       $placeContainer = $('#place-container'),
       promptTpl = Handlebars.compile($('#prompt-tpl').html());
 
+  var getBoundingBox = function(coords, radius) {
+    var lngMile = 0.0192,
+        latMile = 0.01499,
+        bottom = coords[0] - (latMile * radius),
+        top = coords[0] + (latMile * radius),
+        left = coords[1] - (lngMile * radius),
+        right = coords[1] + (lngMile * radius);
+
+    console.log(left + "," + bottom + "," + right + "," + top);
+    return [left, bottom, right, top]; // <xmin>,<ymin>,<xmax>,<ymax>
+  };
+
   var renderPlaces = function(data) {
     console.log('render this data', data, 'to $placeContainer');
   };
 
   var getLayerData = function(layerConfig) {
-    // TODO: do a buffer around curLocation
-    var envelope = '39.9424,-75.1833,39.9625,-75.1440';
+    // do a buffer around curLocation
+    var bbox = getBoundingBox(curLocation, layerConfig.buffer).join(','),
 
-    // TODO: update ajax options to get by buffer
+    // override defaults
     data = $.extend({
-      // geometry: envelope
+      outFields: '*',
+      where: '1=1',
+      // TODO: this doesn't work for some reason
+      geometry: bbox,
+      geometryType: 'esriGeometryEnvelope',
+      spatialRel: 'esriSpatialRelContains',
+      inSR: '4326',
+      outSR: '4326',
+      returnGeometryOnly: 'True',
+      returnIdsOnly: 'False',
+      f: 'json'
     }, layerConfig.agsOptions);
 
     $.ajax({
